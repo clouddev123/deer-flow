@@ -293,6 +293,7 @@ Proxied through nginx: `/api/langgraph/*` → Gateway LangGraph-compatible runti
 
 ### Skills System (`packages/harness/deerflow/skills/`)
 
+- Added `codebase-analysis` custom skill workflow support; lead-agent prompt now explicitly prioritizes this skill for repository/codebase analysis requests before planning execution.
 - **Location**: `deer-flow/skills/{public,custom}/`
 - **Format**: Directory with `SKILL.md` (YAML frontmatter: name, description, license, allowed-tools)
 - **Loading**: `load_skills()` recursively scans `skills/{public,custom}` for `SKILL.md`, parses metadata, and reads enabled state from extensions_config.json
