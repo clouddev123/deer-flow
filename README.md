@@ -580,6 +580,8 @@ When you install `.skill` archives through the Gateway, DeerFlow accepts standar
 
 Tools follow the same philosophy. DeerFlow comes with a core toolset — web search, web fetch, file operations, bash execution — and supports custom tools via MCP servers and Python functions. Swap anything. Add anything.
 
+For repository analysis workflows, built-in helper tools include `repo_overview`, `find_entrypoints`, and `dependency_summary` for fast structure, entrypoint, and dependency-command inspection.
+
 Gateway-generated follow-up suggestions now normalize both plain-string model output and block/list-style rich content before parsing the JSON array response, so provider-specific content wrappers do not silently drop suggestions.
 
 ```

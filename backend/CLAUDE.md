@@ -42,7 +42,7 @@ deer-flow/
 │   │           │   ├── builtins/      # general-purpose, bash agents
 │   │           │   ├── executor.py    # Background execution engine
 │   │           │   └── registry.py    # Agent registry
-│   │           ├── tools/builtins/    # Built-in tools (present_files, ask_clarification, view_image)
+│   │           ├── tools/builtins/    # Built-in tools (present_files, ask_clarification, view_image, repo_overview, find_entrypoints, dependency_summary)
 │   │           ├── mcp/               # MCP integration (tools, cache, client)
 │   │           ├── models/            # Model factory with thinking/vision support
 │   │           ├── skills/            # Skills discovery, loading, parsing
@@ -264,6 +264,9 @@ Proxied through nginx: `/api/langgraph/*` → Gateway LangGraph-compatible runti
 3. **Built-in tools**:
    - `present_files` - Make output files visible to user (only `/mnt/user-data/outputs`)
    - `ask_clarification` - Request clarification (intercepted by ClarificationMiddleware → interrupts)
+   - `repo_overview` - Inspect top-level repository structure and key config files
+   - `find_entrypoints` - Detect likely startup entrypoints (Python/Node/Next.js/Go/Java)
+   - `dependency_summary` - Summarize dependency manifests and dev/test/build commands
    - `view_image` - Read image as base64 (added only if model supports vision)
    - `setup_agent` - Bootstrap-only: persist a brand-new custom agent's `SOUL.md` and `config.yaml`. Bound only when `is_bootstrap=True`.
    - `update_agent` - Custom-agent-only: persist self-updates to the current agent's `SOUL.md` / `config.yaml` from inside a normal chat (partial update + atomic write). Bound when `agent_name` is set and `is_bootstrap=False`.
