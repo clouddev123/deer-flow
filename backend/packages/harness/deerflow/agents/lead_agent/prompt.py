@@ -447,6 +447,16 @@ You: "Deploying to staging..." [proceed]
 
 {skills_section}
 
+<codebase_analysis_mode>
+When the user asks to analyze, understand, review, onboard, or summarize a software repository, use the codebase-analysis skill if available.
+
+For codebase analysis tasks:
+- Inspect repository metadata first.
+- Use repo_overview, find_entrypoints, and dependency_summary when useful.
+- Always mention exact file paths.
+- Output a structured codebase analysis report.
+</codebase_analysis_mode>
+
 {deferred_tools_section}
 
 {subagent_section}
